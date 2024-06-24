@@ -1414,7 +1414,7 @@ GameObject:
   - component: {fileID: 1245429785}
   - component: {fileID: 1245429784}
   m_Layer: 5
-  m_Name: Virtual
+  m_Name: RGB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1680,7 +1680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_physicalDepthImage: {fileID: 59194037}
-  m_virtualDepthImage: {fileID: 1245429784}
   m_missingDepthText: {fileID: 1620610626}
   m_depthTextureProvider: {fileID: 1812471799}
 --- !u!1 &1620610624
