@@ -4,6 +4,7 @@ using Meta.XR.Depth;
 using TMPro;
 using UnityEditor;
 
+
 namespace SolerSoft.Customization
 {
     /// <summary>
@@ -27,6 +28,13 @@ namespace SolerSoft.Customization
         [SerializeField]
         [Tooltip("The Text control to display when depth information is missing.")]
         private TextMeshProUGUI m_missingDepthText;
+
+        public TextMeshProUGUI text_info;
+
+       // public UploadTextureAsBMP saveTextureRawDataToVRHeadset;
+
+      
+        
 
         [SerializeField]
         [Tooltip("The depth texture provider.")]
@@ -61,6 +69,10 @@ namespace SolerSoft.Customization
             // Attempt to get the global depth texture
             var physicalDepthTex = Shader.GetGlobalTexture(EnvironmentDepthTextureProvider.DepthTextureID);
             //var virtualDepthTex = Shader.GetGlobalTexture(VirtualDepthTextureID);
+          //  saveTextureRawDataToVRHeadset.sourceTexture = physicalDepthTex;
+       
+            text_info.text=""+physicalDepthTex.graphicsFormat+" ";
+           // ndiSender.sourceTexture = physicalDepthTex;
 
             // Show based on success
             if ((physicalDepthTex != null) )
@@ -74,6 +86,8 @@ namespace SolerSoft.Customization
 
                 // Link images
                 m_physicalDepthImage.texture = physicalDepthTex;
+               // ndiSender.sourceTexture = physicalDepthTex;
+             
                // m_virtualDepthImage.texture = virtualDepthTex;
 
                 // Success
@@ -115,6 +129,38 @@ namespace SolerSoft.Customization
             // Attempt to show the render textures
             TryShowTextures();
         }
+
+
+
+           void CheckTextureColorFormat(Texture2D texture)
+    {
+        // Get the format of the texture
+        TextureFormat textureFormat = texture.format;
+
+        // Log the texture format
+        Debug.Log("Texture Format: " + textureFormat);
+
+        // Optionally, check for specific formats
+        switch (textureFormat)
+        {
+            case TextureFormat.RGBA32:
+                Debug.Log("The texture format is RGBA32.");
+                break;
+            case TextureFormat.ARGB32:
+                Debug.Log("The texture format is ARGB32.");
+                break;
+            case TextureFormat.RGB24:
+                Debug.Log("The texture format is RGB24.");
+                break;
+            case TextureFormat.Alpha8:
+                Debug.Log("The texture format is Alpha8.");
+                break;
+            // Add more cases as needed
+            default:
+                Debug.Log("The texture format is " + textureFormat);
+                break;
+        }
+    }
         #endregion // Unity Message Handlers
     }
 }

@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/DepthPhotoTest.unity
-    guid: f736d06b0d23d6b49a67f1caad948991
+    path: Assets/Scenes/Depth Test.unity
+    guid: 9164a30b2eeb3f64d9cb136f805d4eb8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 6ef1c6a632c4c91468c9c4676e1a9c99, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f1c5583df46859c4780e6ae95d99008b, type: 2}
